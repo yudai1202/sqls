@@ -20,7 +20,8 @@
               "mysql",
               "postgresql",
               "sqlite3",
-              "mssql"
+              "mssql",
+              "awsathena"
             ]
           },
           "dataSourceName": {

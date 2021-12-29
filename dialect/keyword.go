@@ -386,6 +386,7 @@ const (
 	DatabaseDriverPostgreSQL DatabaseDriver = "postgresql"
 	DatabaseDriverSQLite3    DatabaseDriver = "sqlite3"
 	DatabaseDriverMssql      DatabaseDriver = "mssql"
+	DatabaseDriverAthena     DatabaseDriver = "awsathena"
 )
 
 func DataBaseKeywords(driver DatabaseDriver) []string {
@@ -404,6 +405,8 @@ func DataBaseKeywords(driver DatabaseDriver) []string {
 		return sqliteKeywords
 	case DatabaseDriverMssql:
 		return mssqlKeywords
+	case DatabaseDriverAthena:
+		return athenaKeywords
 	default:
 		return sqliteKeywords
 	}
@@ -424,6 +427,8 @@ func DataBaseFunctions(driver DatabaseDriver) []string {
 	case DatabaseDriverSQLite3:
 		return []string{}
 	case DatabaseDriverMssql:
+		return []string{}
+	case DatabaseDriverAthena:
 		return []string{}
 	default:
 		return []string{}

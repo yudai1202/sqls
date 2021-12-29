@@ -90,6 +90,10 @@ func (c *DBConfig) Validate() error {
 				return errors.New("invalid: connections[].proto")
 			}
 		}
+	case dialect.DatabaseDriverAthena:
+		if c.Params["OutputBucket"] == "" {
+			return errors.New("required: connections[].paras[\"OutputBucket\"]")
+		}
 	default:
 		return errors.New("invalid: connections[].driver")
 	}
